@@ -1,0 +1,6 @@
+node_modules/
+out/
+*.vsix
+test/fixtures/
+test/generator/bin/
+test/generator/obj/

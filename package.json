@@ -1,0 +1,84 @@
+{
+  "name": "dotnet-resources-viewer",
+  "displayName": ".NET Resources Structure Viewer",
+  "description": "Xem cấu trúc nhị phân của file .NET .resources (ResourceReader V1/V2, DeserializingResourceReader): header, bảng type, name/data section, giá trị, ảnh và hex dump.",
+  "version": "1.0.0",
+  "publisher": "vtzy137",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#512BD4",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VTzy137/resource-file.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VTzy137/resource-file/issues"
+  },
+  "homepage": "https://github.com/VTzy137/resource-file#readme",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    ".resources",
+    "dotnet",
+    "resx",
+    "ResourceReader",
+    "binary viewer"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "dotnetResources.viewer",
+        "displayName": ".NET Resources Structure Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.resources"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "dotnetResources.openWithViewer",
+        "title": "Open with .NET Resources Viewer",
+        "category": ".NET Resources"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "dotnetResources.openWithViewer",
+          "when": "!explorerResourceIsFolder",
+          "group": "navigation@90"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "dotnetResources.openWithViewer"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node test/run-tests.js",
+    "package": "npm run compile && vsce package --out dotnet-resources-viewer.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.80.0",
+    "@vscode/vsce": "^3.2.0",
+    "typescript": "^5.4.0"
+  }
+}
