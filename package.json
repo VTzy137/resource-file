@@ -1,8 +1,8 @@
 {
   "name": "dotnet-resources-viewer",
   "displayName": ".NET Resources Structure Viewer",
-  "description": "Xem cấu trúc nhị phân của file .NET .resources (ResourceReader V1/V2, DeserializingResourceReader): header, bảng type, name/data section, giá trị, ảnh và hex dump.",
-  "version": "1.0.0",
+  "description": "Inspect the binary structure of .NET .resources files (ResourceReader V1/V2, DeserializingResourceReader): headers, type table, name/data sections, values, image previews, and hex dumps.",
+  "version": "1.0.1",
   "publisher": "vtzy137",
   "license": "MIT",
   "icon": "media/icon.png",
